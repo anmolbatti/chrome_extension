@@ -1,0 +1,85 @@
+{
+  "manifest_version": 3,
+  "name": "PASTE PERFECT",
+  "short_name": "PASTE PERFECT",
+  "description": "Extension to autofill forms.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "contextMenus",
+    "tabs",
+    "clipboardRead",
+    "scripting",
+    "webNavigation",
+    "activeTab",
+    "cookies"
+  ],
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "index.html?#/popup/mainscreen",
+    "default_title": "PASTE PERFECT"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.weeattogether.org/orders/detail/**"
+      ],
+      "js": [
+        "content_worker_data_center.js"
+      ],      
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://sellercentral.amazon.com/orders-v3/order/**"
+      ],
+      "js": [
+        "amazon_data_center.js"
+      ],      
+      "css": [
+        "floatingStyle.css"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://*.pasteperfect.ai/**",
+        "http://localhost:4200/**"
+      ],
+      "js": [
+        "authPage.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+     
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "floatingStyle.css"
+      ],
+      "js": [
+        "contentPage.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "host_permissions": ["*://*/*"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; child-src 'self';"
+  },
+  "externally_connectable": {
+    "matches": ["*://*.localhost/*", "*://*.pasteperfect.ai/*"]
+  }
+}

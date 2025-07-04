@@ -1,0 +1,150 @@
+<div class="mainbox">
+    <div class="innerBox">
+        <app-header></app-header>
+        <ng-container *ngIf="activeSubscription?.activeSubscriptions">
+            <div class="pastebtn">
+                <button type="button" class="btn" (click)="fillForm()">Paste <span>(Ctrl+Shift+Z or + S)</span></button>
+                <button type="button" class="btn" (click)="prepareAddressAndCopyToClipboard()">Copy Address To Clipboard
+                    <i class="fa-solid fa-cogs general-settings-button" (click)="goToGeneralSettings()"></i></button>
+            </div>
+
+            <div class="mainScreenform">
+                <form action="" id="fieldsForm">
+                    <div>
+                        <div class="lableOne">
+                            <label for="">First Name</label>
+                            <input class="dragItem" type="text" name="firstname"
+                                (ngModelChange)="onFieldChange('firstname', $event)" [(ngModel)]="inputModel.firstname"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Last Name</label>
+                            <input class="dragItem" type="text" name="lastname"
+                                (ngModelChange)="onFieldChange('lastname', $event)" [(ngModel)]="inputModel.lastname"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Full Name</label>
+                            <input class="dragItem" type="text" name="fullName"
+                                (ngModelChange)="onFieldChange('fullName', $event)" [(ngModel)]="inputModel.fullName"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Company Name</label>
+                            <input class="dragItem" type="text" name="companyname"
+                                (ngModelChange)="onFieldChange('companyname', $event)"
+                                [(ngModel)]="inputModel.companyname" [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Address 1</label>
+                            <input class="dragItem" type="text" name="streetAddress"
+                                (ngModelChange)="onFieldChange('streetAddress', $event)"
+                                [(ngModel)]="inputModel.streetAddress" [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Address 2</label>
+                            <input class="dragItem" type="text" name="streetAddress2"
+                                (ngModelChange)="onFieldChange('streetAddress2', $event)"
+                                [(ngModel)]="inputModel.streetAddress2" [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">City</label>
+                            <input class="dragItem" type="text" name="city"
+                                (ngModelChange)="onFieldChange('city', $event)" [(ngModel)]="inputModel.city"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">State</label>
+                            <input class="dragItem" type="text" name="state"
+                                (ngModelChange)="onFieldChange('state', $event)" [(ngModel)]="inputModel.state"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Zip</label>
+                            <input class="dragItem" type="text" name="zipcode"
+                                (ngModelChange)="onFieldChange('zipcode', $event)" [(ngModel)]="inputModel.zipcode"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Phone</label>
+                            <input class="dragItem" type="text" name="phone"
+                                (ngModelChange)="onFieldChange('phone', $event)" [(ngModel)]="inputModel.phone"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="lableOne">
+                            <label for="">Email</label>
+                            <input class="dragItem" type="text" name="email"
+                                (ngModelChange)="onFieldChange('email', $event)" [(ngModel)]="inputModel.email"
+                                [draggable]="true">
+                        </div>
+
+                    </div>
+
+                    <div *ngFor="let field of fields">
+                        <div class="lableOne">
+                            <label [for]="field">{{ field }}</label>
+                            <input class="dragItem" type="text" [name]="field" [(ngModel)]="inputModel[field]"
+                                (ngModelChange)="onFieldChange(field, $event)" [draggable]="true">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="allThereBtn">
+                    <div class="btnleft">
+                        <button type="button" class="btn btn-sm" (click)="getDataFromClipboard()">Clipboard
+                            Mapping</button>
+                        <button type="button" class="btn btn-sm" (click)="addressCorrection()">Address
+                            Corrections</button>
+
+                    </div>
+
+                    <div class="btnRight">
+                        <button type="button" class="btn btn-sm" (click)="fetchMappings()">Fetch All Mapping</button>
+                        <button type="button" class="btn btn-sm" (click)="gotoSiteSettings()">Site Settings</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <app-subscribe-message *ngIf="!activeSubscription.activeSubscriptions"></app-subscribe-message>
+    </div>
+</div>

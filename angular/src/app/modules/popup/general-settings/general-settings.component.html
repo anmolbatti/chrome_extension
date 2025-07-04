@@ -1,0 +1,104 @@
+<div class="mainbox">
+
+    <div class="innerBox">
+    
+        <app-header></app-header>
+
+        <div class="setScreen">
+            <h2>Extension Settings</h2>
+            <div class="setScreenInner">
+
+                <div class="setone">
+                    <h4>Copy Full Name</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="fullname"
+                            [(ngModel)]="generalSettings.addFirstAndLastNameToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+
+                <div class="setone">
+                    <h4>Copy Company Name</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="companyname" [(ngModel)]="generalSettings.addCompanyToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Copy Street Address 1</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="address1" [(ngModel)]="generalSettings.addAddress1ToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="setone">
+                    <h4>Copy Street Address 2</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="address2" [(ngModel)]="generalSettings.addAddress2ToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Copy City</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="city" [(ngModel)]="generalSettings.addCityToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+
+                </div>
+                <div class="setone">
+                    <h4>Copy State</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="state" [(ngModel)]="generalSettings.addStateToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+
+
+                </div>
+
+                <div class="setone">
+                    <h4>Copy Zip</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="zipcode" [(ngModel)]="generalSettings.addZipCodeToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+
+                <!-- phone -->
+                <div class="setone">
+                    <h4>Copy Phone</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="phone" [(ngModel)]="generalSettings.addPhoneToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <!-- email -->
+                <div class="setone">
+                    <h4>Copy Email</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="email" [(ngModel)]="generalSettings.addEmailToAddress"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+
+            
+            </div>
+
+           
+        </div>
+    </div>
+</div>

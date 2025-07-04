@@ -1,0 +1,231 @@
+<!-- <h1>Popup</h1>
+<p>You can easily send messages from the popup to the content page with the provided Tab ID!
+  (tabId=<strong>{{ tabId }}</strong>)</p>
+
+<button (click)="onClick()">Click me to test</button>
+
+<p><strong>{{ message }}</strong></p> -->
+
+<div class="mainbox " >
+
+  <div class="innerBox" >
+    <div class="bgblur" [ngClass]="{'is-blurred': isModalActive}">
+
+        <app-header></app-header>
+
+        <div class="tabs">
+
+          <div class="tabholder">
+            <div>
+              <input type="radio" name="tab-btn" id="tab-btn-1" [(ngModel)]="selectedTab" value="1"
+                (click)="getTargetSettings()">
+              <label for="tab-btn-1">Target Sites</label>
+            </div>
+
+
+            <div>
+              <input type="radio" name="tab-btn" id="tab-btn-2" [(ngModel)]="selectedTab" value="2"
+                (click)="getSourceSitesSettings()">
+              <label for="tab-btn-2">Source Sites</label>
+            </div>
+
+            <div>
+              <input type="radio" name="tab-btn" id="tab-btn-3" [(ngModel)]="selectedTab" value="3" (click)="getLogs()">
+              <label for="tab-btn-3">Logs</label>
+            </div>
+
+            <div>
+
+              <input type="radio" name="tab-btn" id="tab-btn-4" [(ngModel)]="selectedTab" value="4">
+              <label for="tab-btn-4">Help ?</label>
+            </div>
+
+
+
+          </div>
+
+
+
+          <div id="content-1">
+
+            @if(selectedTab == '1' || selectedTab == '2'){
+            <h5>Websites List</h5>
+                       
+            <div class="innerContent" *ngFor="let setting of selectedSiteSettings">
+              <div class="innerleft">
+                <h6>{{setting.url}}</h6>
+              </div>
+              <div class="innerRight">
+                <div class="delete">
+                  <button type="button" title="Remove" (click)="confirmDeleteSetting(setting)">
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M14 4.00475C11.78 3.78475 9.54667 3.67142 7.32 3.67142C6 3.67142 4.68 3.73808 3.36 3.87142L2 4.00475"
+                        stroke="#D92D20" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M5.66669 3.33142L5.81335 2.45808C5.92002 1.82475 6.00002 1.35142 7.12669 1.35142H8.87335C10 1.35142 10.0867 1.85142 10.1867 2.46475L10.3334 3.33142"
+                        stroke="#D92D20" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M12.5667 6.11142L12.1334 12.8247C12.06 13.8714 12 14.6847 10.14 14.6847H5.86002C4.00002 14.6847 3.94002 13.8714 3.86668 12.8247L3.43335 6.11142"
+                        stroke="#D92D20" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6.88666 11.0181H9.10666" stroke="#D92D20" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6.33331 8.35141H9.66665" stroke="#D92D20" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </button>
+                </div>
+                <div class="setingIcon">
+                  <button type="button" title="Setting" (click)="showDetailsOfWebsiteSetting(setting)">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M10 12.509C11.3807 12.509 12.5 11.3897 12.5 10.009C12.5 8.62832 11.3807 7.50903 10 7.50903C8.61929 7.50903 7.5 8.62832 7.5 10.009C7.5 11.3897 8.61929 12.509 10 12.509Z"
+                        stroke="#9AA4B2" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M1.66667 10.7424V9.27573C1.66667 8.40906 2.375 7.6924 3.25 7.6924C4.75833 7.6924 5.375 6.62573 4.61667 5.31739C4.18333 4.56739 4.44167 3.59239 5.2 3.15906L6.64167 2.33406C7.3 1.94239 8.15 2.17573 8.54167 2.83406L8.63333 2.99239C9.38333 4.30073 10.6167 4.30073 11.375 2.99239L11.4667 2.83406C11.8583 2.17573 12.7083 1.94239 13.3667 2.33406L14.8083 3.15906C15.5667 3.59239 15.825 4.56739 15.3917 5.31739C14.6333 6.62573 15.25 7.6924 16.7583 7.6924C17.625 7.6924 18.3417 8.40073 18.3417 9.27573V10.7424C18.3417 11.6091 17.6333 12.3257 16.7583 12.3257C15.25 12.3257 14.6333 13.3924 15.3917 14.7007C15.825 15.4591 15.5667 16.4257 14.8083 16.8591L13.3667 17.6841C12.7083 18.0757 11.8583 17.8424 11.4667 17.1841L11.375 17.0257C10.625 15.7174 9.39167 15.7174 8.63333 17.0257L8.54167 17.1841C8.15 17.8424 7.3 18.0757 6.64167 17.6841L5.2 16.8591C4.44167 16.4257 4.18333 15.4507 4.61667 14.7007C5.375 13.3924 4.75833 12.3257 3.25 12.3257C2.375 12.3257 1.66667 11.6091 1.66667 10.7424Z"
+                        stroke="#9AA4B2" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            }
+            @else if (selectedTab == '3') {
+            <h5>Logs</h5>
+            <div class="innerContent" *ngFor="let log of logs">
+              <div class="innerleft">
+                <p [ngStyle]="{'color': log.success ? 'green' : 'red'}">{{log.transactionId}}</p>
+              </div>
+              <div class="innerRight">
+                <div class="setingIcon">
+                  <button type="button" (click)="copyTransactionId(log)" title="Settings">
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.83994 2.41808L3.36661 8.21141C3.15994 8.43141 2.95994 8.86475 2.91994 9.16475L2.67328 11.3247C2.58661 12.1047 3.14661 12.6381 3.91994 12.5047L6.06661 12.1381C6.36661 12.0847 6.78661 11.8647 6.99327 11.6381L12.4666 5.84475C13.4133 4.84475 13.8399 3.70475 12.3666 2.31142C10.8999 0.931415 9.78661 1.41808 8.83994 2.41808Z"
+                        stroke="#4D506B" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M7.92664 3.38475C8.2133 5.22475 9.70664 6.63141 11.56 6.81808" stroke="#4D506B"
+                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M2 14.6847H14" stroke="#4D506B" stroke-miterlimit="10" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+
+                  </button>
+                </div>
+                <div class="setingIcon">
+                  <button type="button" (click)="copyLog(log)" title="Copy Log">
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.33337 12.0181V4.68475C2.33337 2.01808 3.00004 1.35142 5.66671 1.35142H10.3334C13 1.35142 13.6667 2.01808 13.6667 4.68475V11.3514C13.6667 11.4447 13.6667 11.5381 13.66 11.6314"
+                        stroke="#4D506B" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M4.23337 10.0181H13.6667V12.3514C13.6667 13.6381 12.62 14.6847 11.3334 14.6847H4.66671C3.38004 14.6847 2.33337 13.6381 2.33337 12.3514V11.9181C2.33337 10.8714 3.18671 10.0181 4.23337 10.0181Z"
+                        stroke="#4D506B" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M5.33337 4.68475H10.6667" stroke="#4D506B" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M5.33337 7.01808H8.66671" stroke="#4D506B" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </button>
+                </div>
+
+
+              </div>
+
+
+
+            </div>
+            }
+            @else if (selectedTab == '4') {
+            <h5>Logs</h5>
+
+            <div class="faq-wrapper">
+              <div class="faq-item" *ngFor="let faq of faqs" [ngClass]="{ 'active': faq.isActive }">
+                <div class="question" (click)="toggleFaq(faq)">
+                  <span>{{ faq.question }}</span>
+                  <img src="../../../../assets/images/arrow-up.svg" class="arrow" alt="">
+                </div>
+                <div class="answer" [ngStyle]="{ display: faq.isActive ? 'block' : 'none' }">
+                  <span>{{ faq.answer }}</span>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            }
+          </div>
+           <div class="newfooter">
+            <div class="dmode">
+              <h4>Dark Mode</h4>
+            <label class="switch">
+                <input type="checkbox" name="darkmode" [(ngModel)]="generalSettings.darkMode"
+                    (ngModelChange)="updateSettings()">
+                <span class="slider round"></span>
+            </label>
+            </div>
+        <div class="setone api-select-div">
+          <h4>AI API</h4>
+            &nbsp;
+            <select name="aiapi" class="form-control" [(ngModel)]="generalSettings.aiAPI"
+                (ngModelChange)="updateSettings()">
+                <option value="Gemini">Gemini</option>
+                <option value="GPT">GPT</option>
+                <option value="Vertex">Vertex</option>
+            </select>
+          </div>
+           </div>
+
+        </div>
+    </div>
+      <div id="demo-modal" class="modal" [ngClass]="{'is-active': isModalActive}">
+        <div class="overlay"></div>
+        <div class="modal__content">
+          <div class="contentcenter">
+            <span class="trashicon">
+              <img src="../../../../../assets/images/trash.svg" />
+            </span>
+            <h3>Delete Website</h3>
+            <p>Are you sure you want to delete {{ selectedSetting?.url }}? This action cannot be undone.</p>
+          </div>
+
+
+          <div class="modal__footer">
+            <button type="submit" id="cancelBtn" class="btn btn-lg" (click)="cancelDeleteSetting()">Cancel</button>
+            <button type="submit" id="deleteBtn" class="btn btn-lg" (click)="deleteSetting()">Delete</button>
+            <button type="submit" id="deleteBtn" class="btn btn-lg" (click)="deleteInputMappingSetting()">Delete Input
+              Mapping</button>
+          </div>
+
+          <a href="javascript:;" class="modal__close" (click)="cancelDeleteSetting()">
+            <img src="../../../../assets/images/x-close.svg" alt="">
+          </a>
+        </div>
+      </div>
+
+    <script>
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        item.addEventListener('click', function () {
+          // Close other open items
+          faqItems.forEach(i => {
+            if (i !== this) {
+              i.classList.remove('active');
+              i.querySelector('.answer').style.display = 'none';
+            }
+          });
+
+          // Toggle the clicked item
+          this.classList.toggle('active');
+          const answer = this.querySelector('.answer');
+          if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+          } else {
+            answer.style.display = 'block';
+          }
+        });
+      });
+
+    </script>

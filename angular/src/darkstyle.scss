@@ -1,0 +1,865 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --primary: #22045A;
+  --secondary: #642EFE;
+  --text-color: #4D506B;
+  --text2-color: #344054;
+  --grey-modern: #cdd5df;
+  --input-bg: #141C2E;
+  --white-low-opacity: rgba(255, 255, 255, 0.6);
+  --bg-color: #10161f;
+
+}
+
+.dark-theme {
+
+
+  :root {
+    --white: #fff;
+    --black: #000;
+    --primary: #22045A;
+    --secondary: #642EFE;
+    --text-color: #4D506B;
+    --text2-color: #344054;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border: 1px solid #555555;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+
+  button {
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  }
+
+  .mainbox {
+    background-color: var(--bg-color);
+  }
+
+  .innerBox {
+    background-color: var(--bg-color);
+  }
+
+  .setting button svg path {
+    stroke: rgba(154, 164, 178, 1);
+  }
+
+
+
+
+  .CompanydetailText p {
+
+    color: rgba(172, 172, 172, 1);
+  }
+
+
+  .details {
+    .circicleicon{
+      background-color: rgba(54, 65, 82, 1);
+      
+    }
+    h1 {
+      color: var(--white);
+    }
+    ul {
+      li {
+  
+        color: rgba(154, 164, 178, 1);
+       
+      
+      }
+    }
+  }
+
+
+  .loginbtn {
+    text-align: center;
+  }
+
+  .loginbtn button {
+    background: var(--secondary);
+    width: 100%;
+  }
+
+  .loginbtn p {
+    color: rgba(154, 164, 178, 1);
+  }
+
+
+  .pastebtn button {
+    background: rgba(100, 46, 254, 1);
+
+  }
+
+  .pastebtn button span {
+    color: var(--text-color);
+  }
+
+
+
+  .pastebtn a {
+    color: var(--text-color);
+  }
+
+
+  .mainScreenform form .formInner {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  form label {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: var(--grey-modern);
+    width: 100%;
+  }
+
+  .dragItem {
+    background-color: var(--input-bg);
+    color: var(--white);
+  }
+
+  .white-span {
+    color: var(--white-low-opacity) !important;
+  }
+
+
+  /* .lableOne{width: 100%;} */
+
+  form input,
+  form select {
+
+    border: 1px solid #1E283E;
+    background: var(--input-bg);
+    color: var(--input-bg);
+    outline: none;
+  }
+
+  .pastebtn img {
+    transform: translateY(6px);
+  }
+
+  #select-box {
+    color: #697586;
+    height: 34px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+  }
+
+  #select-box option {
+    color: #101828;
+  }
+
+
+  ::placeholder {
+    color: #1B2031;
+
+  }
+
+  form .lableOne button {
+    width: 54px;
+    padding: 0;
+    border-radius: 4px;
+    background: var(--primary);
+    margin-top: 22px;
+    border: none;
+    height: 34px;
+  }
+
+
+
+  .allThereBtn button {
+    background: rgba(89, 37, 220, 1);
+    color: rgba(217, 214, 254, 1);
+    border: 1px solid rgba(122, 90, 248, 1);
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    cursor: pointer;
+  }
+
+
+
+
+  .btnHeader button {
+    font-size: 12px;
+    color: #642EFE;
+    border-radius: 25px;
+    border: 1px solid #E3D9FD;
+    background: #F1EDFE;
+
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    padding: 6px 16px;
+  }
+
+
+
+
+  .tabholder {
+    background-color: rgba(23, 32, 45, 1);
+    border-color: rgba(30, 40, 62, 1);
+    label {
+        color: white;
+    }
+  }
+
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3,
+  #tab-btn-4:checked~#content-4 {
+    display: block;
+    overflow-y: scroll;
+    max-height: 500px;
+    overflow-x: hidden;
+  }
+
+  .tabs label {
+    color: rgba(154, 164, 178, 1);
+    background-color: transparent;
+  }
+
+  .tabs label:not(:first-of-type) {
+    border-left: none;
+  }
+
+  .tabs input[type="radio"]:checked+label {
+    background-color: #642EFE;
+    color: #fff;
+
+  }
+
+  .tabs h5 {
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .innerContent {
+    padding: 10px 5px;
+    border-radius: 8px;
+    border: 1px solid #D3D3DE;
+    background: var(--input-bg);
+    border: 1px solid #1E283E;
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+
+
+  .innerContent h6 {
+    margin: 0;
+    font-size: 16px;
+    /* color: #642EFE; */
+    color: var(--white);
+  }
+
+  .tabinner {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #D3D3DE;
+    padding: 0 0;
+  }
+
+  .footer {
+    padding: 16px 24px;
+    border-radius: 0px 0px 10px 10px;
+    border-top: 1px solid #E0D7F9;
+    background: #F0EDFB;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer .switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+  }
+
+  .footer .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .footer .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9C9EB5;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .footer .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .footer input:checked+.slider {
+    background-color: #642EFE;
+  }
+
+  .footer input:focus+.slider {
+    box-shadow: 0 0 1px #642EFE;
+  }
+
+  .footer input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+
+  /* Rounded sliders */
+  .footer .slider.round {
+    border-radius: 34px;
+  }
+
+  .footer .slider.round:before {
+    border-radius: 50%;
+  }
+
+  footer h6 {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #3A3D5A;
+  }
+
+
+  .innerRight {
+    .delete {
+      button {
+        svg {
+          path {
+            stroke: #D92D20;
+          }
+        }
+      }
+    }
+
+    button {
+      border-color: rgba(54, 65, 82, 1);
+      background: transparent;
+
+      svg {
+        path {
+          stroke: rgba(154, 164, 178, 1);
+        }
+      }
+    }
+
+  }
+
+
+  .innerRight .setingIcon i {
+    color: rgba(154, 164, 178, 1);
+  }
+
+  .setting i {
+    color: var(--input-bg);
+
+  }
+
+
+  .setScreen {
+    border: 1px solid rgba(30, 40, 62, 1);
+    background: rgba(20, 28, 46, 1);
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+  }
+
+  .setScreen h2 {
+    color: white;
+  }
+
+  .setone select.form-control {
+    border: 1px solid rgba(30, 40, 62, 1);
+    color: rgba(205, 213, 223, 1);
+    background-color: rgba(20, 28, 46, 1);
+  }
+
+  .setScreenInner {
+    border-top: 1px solid rgba(30, 40, 62, 1);
+    border-bottom: 1px solid rgba(30, 40, 62, 1);
+  }
+
+  .innerleft {
+    color: white;
+  }
+
+
+  .setone {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .setone h4 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+    margin: 10px 0;
+  }
+
+
+  .slider {
+
+    background-color: rgba(54, 65, 82, 1);
+  }
+
+  .slider:before {
+    background-color: white;
+  }
+
+  input:checked+.slider {
+    background-color: #642EFE;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #642EFE;
+  }
+
+
+
+
+  .savenum {
+    border-radius: 4px;
+    border: 1px solid #D3D3DE;
+    background: var(--white);
+    box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    padding: 10px 16px;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .savenum p {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: #121521;
+    margin: 0;
+  }
+
+  .savenum button {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    color: #9C9EB5;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+
+  .logo h1 {
+    color: #fff;
+  }
+
+
+  /* Overlay background */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* Overlay content */
+  .overlay-content {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  /* Header */
+  .overlay-content h2 {
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+  .spinner {
+    border: 2px solid #f3f3f3;
+    /* Light grey */
+    border-top: 2px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .logo img {
+    width: 170px;
+    height: auto;
+  }
+
+
+
+
+  .footer {
+    background-color: var(--input-bg);
+    width: Fixed (414px)px;
+    height: Hug (52px)px;
+    padding: 16px 20px 16px 20px;
+    gap: 8px;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+  }
+
+  .extension-settings {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--input-bg);
+    height: auto;
+    padding: 10px;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    /* Changed border style */
+    opacity: 1;
+    /* Set opacity to 1 for visibility */
+  }
+
+  .extsion-setting-title {
+    text-align: center;
+    color: var(--white);
+    display: block;
+    /* Ensure it takes the full width */
+    margin-bottom: 8px;
+    /* Space between title and settings */
+  }
+
+  .extsion-setting-item {
+    color: var(--white);
+  }
+
+  .phone-no {
+    color: #32237c;
+  }
+
+  .phone-no-save {
+    display: flex;
+    /* Use Flexbox for layout */
+    justify-content: space-between;
+    /* Space between the items */
+    align-items: center;
+    /* Center items vertically */
+    color: var(--white);
+    padding: 5px;
+    border: 1px solid #1E283E;
+  }
+
+  .setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+
+  .line-break {
+    border-top: 1px solid var(--grey-modern);
+    margin: 10px 0;
+    /* Adjust margin as needed */
+  }
+
+
+
+  .footer_text {
+    /* width: Fixed (284px)px; */
+    height: Hug (20px)px;
+    gap: 0px;
+    opacity: 0px;
+    color: var(--white);
+  }
+
+  .faq-item {
+    background-color: var(--input-bg);
+    border-color: #1E283E;
+    color: var(--white);
+
+    .answer {
+      color: rgba(205, 213, 223, 1);
+    }
+
+    .question {
+      color: rgba(248, 250, 252, 1);
+    }
+  }
+
+
+
+
+  .company {
+    position: relative;
+    text-align: center;
+  }
+
+  .company-image {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .company-intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Optional: Add background for better text visibility */
+    padding: 10px;
+    font-size: 1.2em;
+    width: 80%;
+    /* Adjust as needed */
+  }
+
+  .company-intro-text {
+    margin-top: -60px;
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 500;
+
+  }
+
+
+
+  /* Styling the feature list item with check icon */
+  .feature {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .icon-wrapper {
+    background-color: var(--grey-modern);
+    /* Grey background */
+    padding: 5px;
+    border-radius: 50%;
+    /* Rounded background for the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    /* Space between icon and text */
+  }
+
+  .icon-wrapper i {
+    color: white;
+    /* White check icon */
+    font-size: 8px;
+    /* Adjust icon size */
+  }
+
+  .feature p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--grey-modern);
+    /* Adjust text color */
+  }
+
+  /* Login button styling */
+  .login-button-container {
+    margin-top: 20px;
+    /* Space between features and the button */
+  }
+
+  .login-button {
+    /* width: 374px; */
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px;
+    background-color: var(--primary);
+    /* You can change this to your preferred button color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    gap: 8px;
+    opacity: 1;
+    /* Fully visible */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity */
+  }
+
+  .login-button:hover {
+    opacity: 0.8;
+    /* Slightly fade on hover */
+  }
+
+  .register-now {
+    margin-top: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--grey-modern);
+    /* Color for the general text */
+  }
+
+  .register-link {
+    color: #642EFE;
+    /* Blue color for the "Register Now" text */
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .register-link:hover {
+    text-decoration: underline;
+    /* Underline on hover */
+  }
+
+
+
+  .modal__icon {
+    width: 50px;
+    /* Adjust the size of the icon */
+    margin-bottom: 5px;
+    /* Space between icon and the text */
+  }
+
+  .modal__content {
+    background-color: rgba(20, 28, 46, 1);
+    border: 0;
+  }
+
+  .contentcenter {
+    .trashicon {
+      background-color: rgba(217, 45, 32, 0.25);
+    }
+
+    h3 {
+      color: var(--white);
+    }
+
+    p {
+      color: rgba(154, 164, 178, 1);
+    }
+  }
+
+  .modal button {
+    color: #fff;
+    border-color: rgba(54, 65, 82, 1);
+    background: transparent;
+
+  }
+  .custom-input input{
+    background-color: transparent;
+    border-color: rgba(30, 40, 62, 1);
+    color: var(--white);
+  }
+
+  
+.newfooter {
+  gap: 12px;
+  background-color: rgb(20 28 46);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 360px;
+
+  h4 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    color: white;
+  }
+
+  .dmode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .setone {
+    margin: 0;
+  }
+}
+}

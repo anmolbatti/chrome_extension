@@ -1,0 +1,74 @@
+<div class="mainbox">
+
+    <div class="innerBox">
+        
+        <app-header></app-header>
+
+        <div class="setScreen">
+            <h2>Site Settings</h2>
+            <div class="setScreenInner">
+                <!-- <div class="setone">
+                    <h4>Already Pasted Warning</h4>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div> -->
+                <div class="setone">
+                    <h4>Allow Special Characters</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="special" [(ngModel)]="siteSettings.specialCharacters"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Allow Special Characters For Phone</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="specialPhone" [(ngModel)]="siteSettings.allowSpecialCharactersPhone"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Paste Complete Phone Number</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="completePhone" [(ngModel)]="siteSettings.pasteCompletePhone"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Floating button</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="floatingButton" [(ngModel)]="siteSettings.showFloatingButton"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setone">
+                    <h4>Override Phone Number</h4>
+                    <label class="switch">
+                        <input type="checkbox" name="overridePhone" [(ngModel)]="siteSettings.overRidePhone"
+                            (ngModelChange)="updateSettings()">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            @if(siteSettings.overRidePhone){
+            <div class="custom-input">
+                <input type="text" name="overridePhoneValue" [(ngModel)]="siteSettings.overRidePhoneValue"
+                [disabled]="!siteSettings.overRidePhone">
+            <button type="button" (click)="updateSettings('overridePhoneValue')"
+                [disabled]="!siteSettings.overRidePhone"> <span *ngIf="!isSaving">Save</span>
+                <span *ngIf="isSaving">
+                  <i class="spinner"></i> 
+                </span></button>
+
+            </div>
+            }
+
+
+        </div>
+    </div>
+</div>
